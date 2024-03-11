@@ -10,6 +10,7 @@ const erro = document.querySelector("#erro");
 const validaContato = () => {
     if(contatosNomes.includes(nome.value) && contatoTelefones.includes(telefone.value)) {
         erro.innerText = "Contato já cadastrado";
+        limparForm();
         return false;
     } else {
         contatosNomes.push(nome.value);
@@ -40,10 +41,10 @@ const exibirContatos = () => {
     const tabela = document.querySelector('tbody');
     let contato = document.createElement('tr');
     contato.innerHTML = `
-        <td>
+        <td class="tabela__corpo__coluna">
             ${nome.value}
         </td>
-        <td>
+        <td class="tabela__corpo__coluna">
             ${telefone.value}
         </td>
     `
