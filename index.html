@@ -2,53 +2,33 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
-    <title>Agenda de Contatos</title>
+    <script src="main.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Agenda de Contatos by Nay</title>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1 class="titulo">Agenda de contatos</h1>
-        </div>
-    </header>
-
     <div class="container">
-        <h2 class="subtitulo">Cadastre um novo contato</h2>
-        <form class="form">
-            <div class="form__div">
-                <input type="text" class="form__div__input" id="nome" placeholder="Nome"/>
+        <form id="form">
+            <div>
+                <label for="name">Nome:&nbsp;</label>
+                <input data-index="new" type="text" name="name" id="name" placeholder="digite o nome" autocomplete="off"/>
             </div>
-            <div class="form__div">
-                <input type="text" class="form__div__input" id="telefone" placeholder="Telefone"/>
+            <div>
+                <label for="email">Email:&nbsp;</label>
+                <input type="email" name="email" id="email" placeholder="digite seu email" autocomplete="off"/>
             </div>
-            <div class="form__div">
-                <button class="form__div__button" type="submit">
-                    Adicionar
-                </button>
+            <div>
+                <label for="tel">Telefone:&nbsp;</label>
+                <input type="tel" name="tel" id="tel" placeholder="digite o telefone" autocomplete="off"/>
             </div>
+            <input id="salvar" type="button" value="Salvar"/>
         </form>
-
-        <p class="erro" id="erro"></p>
-
-        <table class="tabela">   
-            <thead class="tabela__cabecalho">
-                <tr class="tabela__cabecalho__linha">
-                    <th class="tabela__cabecalho__coluna">
-                        Nome
-                    </th>
-                    <th class="tabela__cabecalho__coluna">
-                        Telefone
-                    </th>
-                </tr>
-            </thead>
-            <tbody class="tabela__corpo">
-                
-            </tbody>
-            <caption class="tabela__legenda">Projeto curso da EBAC</caption>
-        </table>  
+        <div id="agenda">
+            
+        </div>
     </div>
-    
-    <script src="script.js"></script>
 </body>
 </html>
